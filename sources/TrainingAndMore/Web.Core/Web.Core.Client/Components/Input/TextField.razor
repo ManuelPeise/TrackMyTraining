@@ -1,0 +1,40 @@
+﻿@inherits InputBase<string>
+@inject IJSRuntime jsRuntime
+@using System.Linq.Expressions;
+@using System.Diagnostics
+
+
+<div class="mb-2 @ContainerStyle">
+    @if (!string.IsNullOrWhiteSpace(Label))
+    {
+        <label class="form-control-label" for="@Id">@Label</label>
+    }
+
+    <input class="form-control @CssClass" id="@Id" @bind="@CurrentValue" type="@Type" />
+
+    @if (ValidationFor != null)
+    {
+        <div class="form-control-validation">
+            <ValidationMessage For="@ValidationFor" />
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public Expression<Func<string>> ValidationFor { get; set; } = default!;
+    [Parameter] public string? Id { get; set; }
+    [Parameter] public string? Label { get; set; }
+    [Parameter] public string? Type { get; set; }
+    [Parameter] public string? ContainerStyle { get; set; }
+
+    protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
+    {
+        result = value ?? string.Empty;
+        validationErrorMessage = string.Empty;
+        return true;
+    }
+
+
+
+
+}

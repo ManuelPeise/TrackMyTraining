@@ -1,0 +1,31 @@
+﻿@inject IStringLocalizer<Common> localizer
+@using Web.Core.Resources
+@using Microsoft.Extensions.Localization
+@using Shared.Models.Auth
+
+<div class="mx-0 auto form">
+    <div class="d-flex justify-content-center p-2">
+        <Icon IconStyle="bi bi-person-vcard display-1 text-primary" />
+    </div>
+    <h4 class="text-center text-secondary">@localizer[Common.CaptionAccountActivation]</h4>
+    <div>
+        <label class="text-center">@localizer[Common.SubTitleAccountActivation].ToString().Replace("{User}", RegistrationResponse.FirstName)</label>
+    </div>
+    <EditForm class="form mt-5" FormName="loginForm" Model=@RequestModel OnValidSubmit="@OnActivate">
+        <DataAnnotationsValidator />
+
+        @if (Failed)
+        {
+            <div class="mb-5">
+                <label class="text-bg-danger text-light text-center p-2">@localizer[Common.LabelAccountActivationError]</label>
+            </div>
+        }
+
+        <TextField class=""
+                   Id="@nameof(RequestModel.Email)"
+                   Label="@localizer[Common.LabelEmail]"
+                   @bind-Value="RequestModel.Email"
+                   ValidationFor="() => RequestModel.Email" />
+        <StyledButton AdditionalStyle="mt-4" Label="@localizer[Common.LabelConfirmEmail]" />
+    </EditForm>
+</div>

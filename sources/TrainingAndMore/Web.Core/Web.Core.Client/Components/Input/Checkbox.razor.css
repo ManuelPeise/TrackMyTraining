@@ -1,0 +1,12 @@
+﻿.form-check
+{
+    box-shadow: none!important;
+}
+
+.valid.modified:not([type=checkbox]){
+    outline: none!important;
+}
+
+.form-check-input:focus {
+    box-shadow: none !important;
+}

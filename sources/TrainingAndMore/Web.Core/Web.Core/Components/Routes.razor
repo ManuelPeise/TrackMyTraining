@@ -1,0 +1,26 @@
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(Client._Imports).Assembly }">
+        <Found Context="routeData">
+            <AuthorizeView>
+                <Authorized>
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
+                </Authorized>
+                <Authorizing>
+                    <p>Authorizing...</p>
+                </Authorizing>
+                <NotAuthorized>
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.AuthLayout)" />
+                    <RedirectToLogin />
+                </NotAuthorized>
+            </AuthorizeView>
+           
+        </Found>
+        <NotFound>
+            <CascadingAuthenticationState>
+
+                <p>No Found</p>
+
+            </CascadingAuthenticationState>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>

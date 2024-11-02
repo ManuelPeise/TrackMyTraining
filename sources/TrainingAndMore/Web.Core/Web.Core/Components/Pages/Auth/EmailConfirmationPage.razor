@@ -1,0 +1,12 @@
+﻿@page "/confirm-email"
+@page "/confirm-email/{parameter}"
+
+<div class="h-100 d-flex d-flex align-items-center justify-content-center p-4">
+    @if (IsLoading)
+    {
+        <LoadingOverlay />
+    }
+    <ConfirmEmailForm RegistrationResponse="RegistrationResponse"/>
+</div>
+
+

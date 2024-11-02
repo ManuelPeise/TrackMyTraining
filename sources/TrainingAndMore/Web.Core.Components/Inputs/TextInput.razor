@@ -1,0 +1,15 @@
+﻿<div class="@ColSize">
+    <label>@Label</label>
+    <InputText @bind-Value="Value" class="form-control" />
+    <ValidationMessage For="() => Value" />
+</div>
+
+@code {
+    public string ColSize { get; set; } = "col-md-12";
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+    [Parameter]
+    public string? Value { get; set; }
+    [Parameter]
+    public EventCallback<string?> ValueChanged { get; set; }
+}

@@ -1,0 +1,52 @@
+﻿@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+@using System.Globalization;
+
+<div>
+    <select @bind="Culture">
+        <option value="en-En">English</option>
+        <option value="de-De">German</option>
+    </select>
+</div>
+
+@code {
+    private const string Lng = "lng";
+
+
+    protected override void OnInitialized()
+    {
+        Culture = CultureInfo.CurrentCulture;
+    }
+
+    private CultureInfo Culture
+    {
+        get
+        {
+            return CultureInfo.CurrentCulture;
+        }
+
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var uri = new Uri(NavigationManager.Uri)
+                    .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+                var cultureEscaped = Uri.EscapeDataString(value.Name);
+                var uriEscaped = Uri.EscapeDataString(uri);
+
+                var fullUri = $"Culture/Set?selectedCulture={cultureEscaped}&redirectUri={uriEscaped}";
+                NavigationManager.NavigateTo(fullUri, forceLoad: true);
+            }
+        }
+
+
+    }
+
+    private async Task<string> GetCulture() =>
+        await JsRuntime.InvokeAsync<string>("localStorage.getItem", Lng);
+    private async Task<string> SetCulture(string culture) =>
+        await JsRuntime.InvokeAsync<string>("localStorage.setItem", Lng, culture);
+
+
+}
