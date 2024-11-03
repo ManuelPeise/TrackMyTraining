@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\js\" />
+    <Folder Include="Models\Components\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 

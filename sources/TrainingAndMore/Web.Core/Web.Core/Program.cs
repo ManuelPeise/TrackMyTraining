@@ -62,4 +62,6 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(Web.Core.Client._Imports).Assembly);
 
+app.UseStatusCodePagesWithRedirects("/no-content");
+
 app.Run();

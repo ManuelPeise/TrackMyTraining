@@ -1,0 +1,10 @@
+﻿@page "/no-content"
+@inject IStringLocalizer<Common> localizer
+@using Web.Core.Resources
+@using Microsoft.Extensions.Localization
+
+<div class="d-flex justify-content-center align-items-center h-100 w-100">
+    <div class="d-flex justify-content-center align-items-center p-4 bg-danger w-100">
+        <label class="text-white text-center fs5">@localizer[Common.ErrorNoContent]</label>
+    </div>
+</div>

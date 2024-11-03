@@ -180,4 +180,13 @@
   <data name="LabelConfirmEmail" xml:space="preserve">
     <value>Emailaddresse bestätigen</value>
   </data>
+  <data name="LabelLogout" xml:space="preserve">
+    <value>Abmelden</value>
+  </data>
+  <data name="LabelProfile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="ErrorNoContent" xml:space="preserve">
+    <value>Oops, hier ist etwas schief gelaufen!</value>
+  </data>
 </root>

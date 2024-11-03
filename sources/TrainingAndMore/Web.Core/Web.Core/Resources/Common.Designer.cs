@@ -99,6 +99,15 @@ namespace Web.Core.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        public static string ErrorNoContent {
+            get {
+                return ResourceManager.GetString("ErrorNoContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         public static string LabelAccountActivationError {
             get {
                 return ResourceManager.GetString("LabelAccountActivationError", resourceCulture);
@@ -171,6 +180,15 @@ namespace Web.Core.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        public static string LabelLogout {
+            get {
+                return ResourceManager.GetString("LabelLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         public static string LabelName {
             get {
                 return ResourceManager.GetString("LabelName", resourceCulture);
@@ -201,6 +219,15 @@ namespace Web.Core.Resources {
         public static string LabelPasswordReplication {
             get {
                 return ResourceManager.GetString("LabelPasswordReplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        public static string LabelProfile {
+            get {
+                return ResourceManager.GetString("LabelProfile", resourceCulture);
             }
         }
         

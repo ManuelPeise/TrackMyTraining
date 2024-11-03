@@ -3,7 +3,7 @@
         <Found Context="routeData">
             <AuthorizeView>
                 <Authorized>
-                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.AppLayout)" />
                 </Authorized>
                 <Authorizing>
                     <p>Authorizing...</p>
@@ -13,14 +13,11 @@
                     <RedirectToLogin />
                 </NotAuthorized>
             </AuthorizeView>
-           
         </Found>
         <NotFound>
-            <CascadingAuthenticationState>
-
+            <LayoutView Layout="@typeof(Layout.MainLayout)">
                 <p>No Found</p>
-
-            </CascadingAuthenticationState>
+            </LayoutView>
         </NotFound>
     </Router>
 </CascadingAuthenticationState>

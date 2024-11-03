@@ -7,16 +7,18 @@ namespace Web.Core.Components.Forms
 {
     public partial class LoginForm
     {
+       
+
         [Inject]
-        public NavigationManager NavigationManager { get; set; }
+        public NavigationManager? NavigationManager { get; set; }
         [Inject]
         [CascadingParameter]
-        public AuthenticationStateProvider Provider { get; set; }
+        public AuthenticationStateProvider? Provider { get; set; }
         [Parameter]
         public bool ShowRegisterLink { get; set; }
         [Parameter]
-        public string Email { get; set; }
-        public LoginRequest LoginRequest { get; set; }
+        public string? Email { get; set; }
+        public LoginRequest? LoginRequest { get; set; }
         [Parameter] 
         public EventCallback<bool> SetIsLoading { get; set; }
 
@@ -24,7 +26,7 @@ namespace Web.Core.Components.Forms
         {
             LoginRequest = new LoginRequest
             {
-                Email = Email,
+                Email = Email ?? string.Empty,
                 Password = string.Empty,
             };
         }

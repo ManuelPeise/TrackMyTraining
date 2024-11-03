@@ -1,0 +1,29 @@
+﻿dropdown-btn{
+    border: none!important;
+    outline:none;
+    box-shadow:none!important;
+}
+
+.dropdown-menu {
+    display: none;
+    padding:0;
+}
+
+    .dropdown-menu.is-active{
+        height: auto;
+        background-color:#fff;
+        display:flex;
+        flex-direction:column;
+        border-radius:0;
+        position:absolute;
+        right:0
+    }
+
+    .dropdown-menu.is-active:hover{
+        cursor:pointer;
+    }
+
+.item:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+﻿<li id="@ItemId" class="nav-item p-0 m-0 px-0">
+    <a class="d-flex d-inline-flex align-items-baseline text-light text-decoration-none nav-link pt-0 pb-0" href="@To">
+        <i class="@Icon fs-4"></i>
+        @if (IsExpanded)
+        {
+            <span class="fs-5 ms-2 d-none d-md-inline ps-2">@Label</span>
+        }
+    </a>
+    @if (HasDivider)
+    {
+        <hr class="text-white" />
+    }
+</li>
+
+@code {
+
+    [Parameter] public string? ItemId { get; set; }
+    [Parameter] public bool IsExpanded { get; set; }
+    [Parameter] public bool HasDivider { get; set; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public string? Label { get; set; }
+    [Parameter] public string? To { get; set; }
+
+}
