@@ -22,13 +22,21 @@
             @*  side bar *@
             <div class="d-flex flex-row px-0 w-100 app-content-container">
                 <div class="d-flex flex-column bg-dark">
-                    <ul class="nav nav-pills p-0 m-0 mb-auto px-2 pt-2">
-                        <NavItem ItemId="test"
-                                 Icon="bi bi-gear"
-                                 Label="Test my nice app menu"
-                                 To="/"
-                                 IsExpanded="_isExpanded"
-                                 HasDivider="true" />
+                    <ul class="m-0 mb-auto pt-2 ps-0 pe-0">
+                        <li class="">
+                            <NavItem ItemId="test"
+                                     Icon="bi bi-gear"
+                                     Label="Test my"
+                                     To="/"
+                                     IsExpanded="_isExpanded"
+                                     HasDivider="true" />
+                        </li>
+                        <li class="">
+                            <NavItemGroup Model="@_administrationNavItemModel"
+                                          IsExpanded="@_isExpanded"
+                                          HasDivider="true" />
+                        </li>
+                       
                     </ul>
                 </div>
                 @* page content *@

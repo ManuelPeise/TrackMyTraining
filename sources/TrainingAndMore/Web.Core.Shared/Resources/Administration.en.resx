@@ -117,79 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LabelLogin" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelEmail" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelPassword" xml:space="preserve">
-    <value />
-  </data>
-  <data name="EmailValidationError" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PasswordValidationError" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelCreateAccount" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelRegister" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelFirstName" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelPasswordReplication" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelDateOfBirth" xml:space="preserve">
-    <value />
-  </data>
-  <data name="DateValidationError" xml:space="preserve">
-    <value />
-  </data>
-  <data name="PasswordReplicatiopnError" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CaptionAccountActivation" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SubTitleAccountActivation" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelRemember" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelBackToLogin" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CaptionLoginToYourAccount" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelNoAccount" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelAccountActivationError" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelConfirmEmail" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelLogout" xml:space="preserve">
-    <value />
-  </data>
-  <data name="LabelProfile" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ErrorNoContent" xml:space="preserve">
-    <value />
-  </data>
   <data name="LabelAdministration" xml:space="preserve">
-    <value />
+    <value>Administration</value>
+  </data>
+  <data name="LabelUserAdministration" xml:space="preserve">
+    <value>User administration</value>
   </data>
 </root>

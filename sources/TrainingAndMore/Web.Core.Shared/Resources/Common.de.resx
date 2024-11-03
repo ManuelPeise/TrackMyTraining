@@ -189,4 +189,7 @@
   <data name="ErrorNoContent" xml:space="preserve">
     <value>Oops, hier ist etwas schief gelaufen!</value>
   </data>
+  <data name="LabelAdministration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
 </root>

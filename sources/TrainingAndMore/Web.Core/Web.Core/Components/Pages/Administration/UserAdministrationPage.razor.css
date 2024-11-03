@@ -1,0 +1,9 @@
+﻿.menu-container {
+    padding: 4px;
+    padding-top:0; 
+}
+
+.menu-list {
+    background-color: #fff;
+    width:100%;
+}

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Components\Pages\Administration\Components\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 

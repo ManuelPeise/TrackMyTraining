@@ -1,0 +1,30 @@
+﻿.sectionMenu-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 4px;
+    border: none;
+}
+
+    .sectionMenu-container:hover:not(:disabled) {
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+
+    .sectionMenu-container.disabled{
+        cursor: not-allowed;
+    }
+    
+.title {
+    color: #b3b3b3;
+    font-weight:bold;
+    padding-left:6px;
+    
+}
+
+.subtitle {
+    color: #cccccc;
+    font-style: italic;
+    padding-left: 6px;
+}

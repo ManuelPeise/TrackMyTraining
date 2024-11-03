@@ -117,6 +117,15 @@ namespace Web.Core.Shared.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        public static string LabelAdministration {
+            get {
+                return ResourceManager.GetString("LabelAdministration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         public static string LabelBackToLogin {
             get {
                 return ResourceManager.GetString("LabelBackToLogin", resourceCulture);
