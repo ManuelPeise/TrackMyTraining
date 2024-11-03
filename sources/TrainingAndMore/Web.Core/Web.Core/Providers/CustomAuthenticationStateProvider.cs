@@ -1,12 +1,12 @@
 ﻿using BusinessLogic.Shared.Interfaces;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using Shared.Models.Api;
 using Shared.Models.Auth;
 using System.Security.Claims;
-using Web.Core.Models;
+using Web.Core.Shared.Models.Auth;
+using LoginRequest = Web.Core.Shared.Models.Auth.LoginRequest;
 
 namespace Web.Core.Providers
 {
@@ -42,7 +42,7 @@ namespace Web.Core.Providers
             return new AuthenticationState(new ClaimsPrincipal(identity));
         }
 
-        public async Task OnLogin(Models.LoginRequest loginRequest)
+        public async Task OnLogin(LoginRequest loginRequest)
         {
             if ((_httpService != null))
             {

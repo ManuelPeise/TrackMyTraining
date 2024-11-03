@@ -12,7 +12,7 @@
         {
             foreach (var item in Items)
             {
-                if (item.ItemType == DropdownItemTypeEnum.Link)
+                if (item.ItemType == Shared.Enums.DropdownItemTypeEnum.Link)
                 {
                     <a class="item text-decoration-none dropdown-item" href="@item.To">@item.Label</a>
                 }

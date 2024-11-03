@@ -6,7 +6,7 @@
                     <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.AppLayout)" />
                 </Authorized>
                 <Authorizing>
-                    <p>Authorizing...</p>
+                    <LoadingOverlay />
                 </Authorizing>
                 <NotAuthorized>
                     <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.AuthLayout)" />

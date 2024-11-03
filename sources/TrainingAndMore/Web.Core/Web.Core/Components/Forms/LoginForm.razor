@@ -1,36 +1,34 @@
-﻿@inject IStringLocalizer<Common> localizer
-@using Web.Core.Resources
-@using Microsoft.Extensions.Localization
-@using Shared.Models.Auth
+﻿@using Microsoft.Extensions.Localization
+@using Shared.Models
 
 <div class="mx-0 auto form">
     <div class="d-flex justify-content-center p-2">
         <Icon IconStyle="bi bi-person-circle display-1 text-primary" />
     </div>
-    <h4 class="text-center">@localizer[Common.CaptionLoginToYourAccount]</h4>
+    <h4 class="text-center">@ResourceService.GetResource("CaptionLoginToYourAccount")</h4>
     <EditForm class="form mt-5" FormName="loginForm" Model=@LoginRequest OnValidSubmit="@OnLogin">
         <DataAnnotationsValidator />
         <TextField class=""
                    Id="@nameof(LoginRequest.Email)"
-                   Label="@localizer[Common.LabelEmail]"
+                   Label="@ResourceService.GetResource("LabelEmail")"
                    @bind-Value="LoginRequest.Email"
                    ValidationFor="() => LoginRequest.Email" />
         <TextField class=""
                    Id="@nameof(LoginRequest.Password)"
-                   Label="@localizer[Common.LabelPassword]"
+                   Label="@ResourceService.GetResource("LabelPassword")"
                    @bind-Value="LoginRequest.Password"
                    ValidationFor="() => LoginRequest.Password" Type="password" />
         <div class="row d-flex align-items-baseline mt-3">
             <div class="col col-12 ps-5">
                 <Checkbox class="mt-2" Id="@nameof(LoginRequest.Remember)"
-                          Label="@localizer[Common.LabelRemember]"
+                          Label="@ResourceService.GetResource("LabelRemember")"
                           @bind-Value="LoginRequest.Remember" />
             </div>
             <div class="col col-12 d-flex justify-content-center ps-5 mt-4">
-                <FormLink Css="" To="/register" Label="@localizer[Common.LabelNoAccount]" />
+                <FormLink Css="" To="/register" Label="@ResourceService.GetResource("LabelNoAccount")" />
             </div>
         </div>
-        <StyledButton AdditionalStyle="mt-4" Label="@localizer[Common.LabelLogin]" />
+        <StyledButton AdditionalStyle="mt-4" Label="@ResourceService.GetResource("LabelLogin")" />
     </EditForm>
 </div>
 

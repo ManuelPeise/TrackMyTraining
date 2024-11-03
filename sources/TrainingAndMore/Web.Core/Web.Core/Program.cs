@@ -3,12 +3,14 @@ using BusinessLogic.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Web.Core.Components;
 using Web.Core.Providers;
+using Web.Core.Shared.Services;
+using Web.Core.Shared.Services.Interfaces;
 
 string[] supportedCultures = new string[] { "en-En","de-De" };
-
+// D:\Development\WorkFolder\TrainingTracker\TrackMyTraining\sources\TrainingAndMore\Web.Core.Shared\Resources\Common.resx
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddLocalization(opt => opt.ResourcesPath = "~Web.Core\\Resources\\");
+builder.Services.AddLocalization();
 
 builder.Services.Configure<RequestLocalizationOptions>(opt =>
 {
@@ -19,7 +21,7 @@ builder.Services.Configure<RequestLocalizationOptions>(opt =>
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IHttpService, HttpService>();
-
+builder.Services.AddScoped(typeof(IResourceService<>), typeof(ResourceService<>));
 
 builder.Services.AddAuthenticationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();

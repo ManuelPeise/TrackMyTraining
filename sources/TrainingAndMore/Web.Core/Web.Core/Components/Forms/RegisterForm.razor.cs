@@ -1,13 +1,17 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components;
-using Web.Core.Models;
 using Web.Core.Providers;
 using Newtonsoft.Json;
+using Web.Core.Shared.Resources;
+using Web.Core.Shared.Services.Interfaces;
+using Web.Core.Shared.Models.Auth;
 
 namespace Web.Core.Components.Forms
 {
     public partial class RegisterForm
     {
+        [Inject]
+        public IResourceService<Common>? ResourceService { get; set; }
         [Inject]
         public NavigationManager? NavigationManager { get; set; }
         [Inject]

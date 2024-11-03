@@ -1,4 +1,4 @@
-﻿namespace Shared.Enums
+﻿namespace Web.Core.Shared.Enums
 {
     public enum DropdownItemTypeEnum
     {

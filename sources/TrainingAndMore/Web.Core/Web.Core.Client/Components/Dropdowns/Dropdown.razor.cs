@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Web.Core.Client.Components.Models;
+using Web.Core.Shared;
+using Web.Core.Shared.Models;
 
 namespace Web.Core.Client.Components.Dropdowns
 {

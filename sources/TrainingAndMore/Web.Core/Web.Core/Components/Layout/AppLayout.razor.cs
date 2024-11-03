@@ -2,15 +2,19 @@
 using Microsoft.AspNetCore.Components;
 using Web.Core.Providers;
 using Shared.Models.Auth;
-using Shared.Enums;
 using Microsoft.Extensions.Localization;
-using Web.Core.Resources;
-using Web.Core.Client.Components.Models;
+using Web.Core.Shared;
+using Web.Core.Shared.Resources;
+using Web.Core.Shared.Services.Interfaces;
+using Web.Core.Shared.Models;
+using Web.Core.Shared.Enums;
 
 namespace Web.Core.Components.Layout
 {
     public partial class AppLayout
     {
+        [Inject]
+        public IResourceService<Common>? ResourceService { get; set; }
         [Inject]
         [CascadingParameter]
         public AuthenticationStateProvider? Provider { get; set; }
@@ -32,13 +36,13 @@ namespace Web.Core.Components.Layout
                 new DropdownItem
                 {
                     ItemType = DropdownItemTypeEnum.Link,
-                    Label =  Localizer[Common.LabelProfile],
+                    Label =  ResourceService.GetResource("LabelProfile"),
                     To = $"/profile/{_currentUser.Id}"
                 },
                 new DropdownItem
                 {
                     ItemType = DropdownItemTypeEnum.Button,
-                    Label = Localizer[Common.LabelLogout],
+                    Label = ResourceService.GetResource("LabelLogout"),
                     Callback = logOutCallback
                 }
             };

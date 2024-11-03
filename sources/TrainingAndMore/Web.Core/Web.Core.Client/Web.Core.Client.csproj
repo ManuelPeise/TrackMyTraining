@@ -20,7 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\BusinessLogic.Shared\BusinessLogic.Shared.csproj" />
+    <ProjectReference Include="..\..\Shared.Enums\Shared.Enums.csproj" />
     <ProjectReference Include="..\..\Shared.Models\Shared.Models.csproj" />
+    <ProjectReference Include="..\..\Web.Core.Shared\Web.Core.Shared.csproj" />
   </ItemGroup>
 
 </Project>

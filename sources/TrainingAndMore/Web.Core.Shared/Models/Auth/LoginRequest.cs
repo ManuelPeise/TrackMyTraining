@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Web.Core.Shared.Resources;
 using Shared.Interfaces.UserInterfaces;
-using Web.Core.Resources;
 
-namespace Web.Core.Models
+namespace Web.Core.Shared.Models.Auth
 {
-    public class LoginRequest: ILoginRequest
+    public class LoginRequest : ILoginRequest
     {
         [EmailAddress]
         [DataType(DataType.EmailAddress)]

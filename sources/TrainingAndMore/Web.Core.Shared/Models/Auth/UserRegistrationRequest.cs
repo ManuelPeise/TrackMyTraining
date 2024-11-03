@@ -1,11 +1,9 @@
 ﻿using Shared.Interfaces.UserInterfaces;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
-using Web.Core.Models.Validation;
-using Web.Core.Resources;
+using System.ComponentModel;
+using Web.Core.Shared.Resources;
 
-namespace Web.Core.Models
+namespace Web.Core.Shared.Models.Auth
 {
     public class UserRegistrationRequest : IUserRegistration
     {
@@ -37,10 +35,5 @@ namespace Web.Core.Models
         [Required(ErrorMessageResourceName = nameof(Common.PasswordValidationError), ErrorMessageResourceType = typeof(Common))]
         [Compare("Password", ErrorMessageResourceName = nameof(Common.PasswordReplicatiopnError), ErrorMessageResourceType = typeof(Common))]
         public string PasswordReplication { get; set; } = string.Empty;
-
-        private string GetPassword()
-        {
-            return Password ?? string.Empty;
-        }
     }
 }

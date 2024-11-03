@@ -1,4 +1,4 @@
-﻿namespace Web.Core.Client.Components.Models
+﻿namespace Web.Core.Shared
 {
     public static class Delegates
     {
