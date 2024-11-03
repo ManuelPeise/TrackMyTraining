@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components;
-using Web.Core.Providers;
 using Web.Core.Shared.Services.Interfaces;
 using Web.Core.Shared.Resources;
 using Web.Core.Shared.Models.Auth;
+using Web.Core.Shared.Providers;
 
-namespace Web.Core.Components.Forms
+namespace Web.Core.Client.Components.Forms
 {
     public partial class LoginForm
     {
@@ -39,7 +39,7 @@ namespace Web.Core.Components.Forms
         {
             await SetIsLoading.InvokeAsync(true);
 
-            await ((CustomAuthenticationStateProvider)Provider).OnLogin(LoginRequest);
+            await ((CustomAuthStateProvider)Provider).OnLogin(LoginRequest);
 
             await SetIsLoading.InvokeAsync(true);
 

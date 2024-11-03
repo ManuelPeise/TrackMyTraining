@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components;
-using Web.Core.Providers;
 using Shared.Models.Auth;
 using Microsoft.Extensions.Localization;
 using Web.Core.Shared;
@@ -8,6 +7,7 @@ using Web.Core.Shared.Resources;
 using Web.Core.Shared.Services.Interfaces;
 using Web.Core.Shared.Models;
 using Web.Core.Shared.Enums;
+using Web.Core.Shared.Providers;
 
 namespace Web.Core.Components.Layout
 {
@@ -29,7 +29,7 @@ namespace Web.Core.Components.Layout
         {
             var logOutCallback = new Delegates.AsyncCallback(OnLogout);
 
-            _currentUser = ((CustomAuthenticationStateProvider)Provider).CurrentUser;
+            _currentUser = ((CustomAuthStateProvider)Provider).CurrentUser;
 
             _userMenuDropdownItems = new List<DropdownItem>
             {
@@ -50,7 +50,7 @@ namespace Web.Core.Components.Layout
 
         private async Task OnLogout()
         {
-            await ((CustomAuthenticationStateProvider)Provider).OnLogout();
+            await ((CustomAuthStateProvider)Provider).OnLogout();
 
         }
 

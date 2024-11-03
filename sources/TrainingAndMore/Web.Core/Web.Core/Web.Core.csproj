@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\BusinessLogic.Shared\BusinessLogic.Shared.csproj" />
-    <ProjectReference Include="..\..\Shared.Enums\Shared.Enums.csproj" />
-    <ProjectReference Include="..\..\Shared.Models\Shared.Models.csproj" />
     <ProjectReference Include="..\..\Shared.Resources\Shared.Resources.csproj" />
     <ProjectReference Include="..\..\Web.Core.Shared\Web.Core.Shared.csproj" />
     <ProjectReference Include="..\Web.Core.Client\Web.Core.Client.csproj" />

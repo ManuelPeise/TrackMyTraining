@@ -6,11 +6,10 @@ using Shared.Models.Api;
 using Shared.Models.Auth;
 using System.Security.Claims;
 using Web.Core.Shared.Models.Auth;
-using LoginRequest = Web.Core.Shared.Models.Auth.LoginRequest;
 
-namespace Web.Core.Providers
+namespace Web.Core.Shared.Providers
 {
-    public class CustomAuthenticationStateProvider : AuthenticationStateProvider
+    public class CustomAuthStateProvider : AuthenticationStateProvider
     {
         private const string JWT = "jwt-token";
 
@@ -18,7 +17,7 @@ namespace Web.Core.Providers
         private readonly IJSRuntime _jsRuntime;
         public UserExportModel? CurrentUser { get; private set; }
 
-        public CustomAuthenticationStateProvider(IHttpService httpService, IJSRuntime jsRuntime)
+        public CustomAuthStateProvider(IHttpService httpService, IJSRuntime jsRuntime)
         {
             _httpService = httpService;
             _jsRuntime = jsRuntime;
@@ -42,7 +41,7 @@ namespace Web.Core.Providers
             return new AuthenticationState(new ClaimsPrincipal(identity));
         }
 
-        public async Task OnLogin(LoginRequest loginRequest)
+        public async Task OnLogin(Shared.Models.Auth.LoginRequest loginRequest)
         {
             if ((_httpService != null))
             {

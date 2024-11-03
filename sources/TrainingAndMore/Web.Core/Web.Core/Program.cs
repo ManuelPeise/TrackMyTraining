@@ -2,7 +2,7 @@ using BusinessLogic.Shared.Interfaces;
 using BusinessLogic.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Web.Core.Components;
-using Web.Core.Providers;
+using Web.Core.Shared.Providers;
 using Web.Core.Shared.Services;
 using Web.Core.Shared.Services.Interfaces;
 
@@ -24,7 +24,7 @@ builder.Services.AddScoped<IHttpService, HttpService>();
 builder.Services.AddScoped(typeof(IResourceService<>), typeof(ResourceService<>));
 
 builder.Services.AddAuthenticationCore();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 builder.Services.AddCascadingAuthenticationState();
 
 // Add services to the container.

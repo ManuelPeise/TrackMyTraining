@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components;
-using Web.Core.Providers;
 using Newtonsoft.Json;
 using Web.Core.Shared.Resources;
 using Web.Core.Shared.Services.Interfaces;
 using Web.Core.Shared.Models.Auth;
+using Web.Core.Shared.Providers;
 
-namespace Web.Core.Components.Forms
+namespace Web.Core.Client.Components.Forms
 {
     public partial class RegisterForm
     {
@@ -25,7 +25,7 @@ namespace Web.Core.Components.Forms
         {
             await SetIsLoading.InvokeAsync(true);
 
-            var result = await ((CustomAuthenticationStateProvider)Provider).OnRegisterUser(RegisterRequest);
+            var result = await ((CustomAuthStateProvider)Provider).OnRegisterUser(RegisterRequest);
 
             await SetIsLoading.InvokeAsync(false);
 

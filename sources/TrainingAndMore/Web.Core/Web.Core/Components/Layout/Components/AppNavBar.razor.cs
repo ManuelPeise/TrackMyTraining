@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Web.Core.Providers;
-using Shared.Models.Auth;
+using Web.Core.Shared.Providers;
 
 namespace Web.Core.Components.Layout.Components
 {
@@ -15,7 +14,7 @@ namespace Web.Core.Components.Layout.Components
         {
             if (Provider != null)
             {
-                var provider = (CustomAuthenticationStateProvider)Provider;
+                var provider = (CustomAuthStateProvider)Provider;
 
                 await provider.OnLogout();
             }

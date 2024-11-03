@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Shared.Models.Auth;
-using Web.Core.Providers;
 using Web.Core.Shared.Models.Auth;
+using Web.Core.Shared.Providers;
 using Web.Core.Shared.Resources;
 using Web.Core.Shared.Services.Interfaces;
 
-namespace Web.Core.Components.Forms
+namespace Web.Core.Client.Components.Forms
 {
     public partial class ConfirmEmailForm
     {
@@ -38,7 +38,7 @@ namespace Web.Core.Components.Forms
         {
             await SetIsLoading.InvokeAsync(true);
 
-            var result = await ((CustomAuthenticationStateProvider)Provider).OnActivateAccount(RequestModel);
+            var result = await ((CustomAuthStateProvider)Provider).OnActivateAccount(RequestModel);
 
             await SetIsLoading.InvokeAsync(false);
             if (result != null)
