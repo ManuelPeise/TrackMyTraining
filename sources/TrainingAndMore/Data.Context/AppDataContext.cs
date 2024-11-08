@@ -26,5 +26,7 @@ namespace Data.Context
 
         public DbSet<AppUserEntity> AppUser { get; set; }
         public DbSet<AppUserCredentials> Credentials { get; set; }
+        public DbSet<LogMessageEntity> LogMessages { get; set; }
+        public DbSet<MetricEntity> Metrics { get; set; }
     }
 }

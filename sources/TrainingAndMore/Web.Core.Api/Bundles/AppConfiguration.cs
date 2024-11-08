@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Shared.Interfaces;
+﻿using BusinessLogic.Administration.Services;
+using BusinessLogic.Shared.Interfaces;
 using BusinessLogic.Shared.Services;
 using Data.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,9 +18,9 @@ namespace Web.Core.Api.Bundles
         {
             builder.Services.AddDbContext<AppDataContext>(opt =>
             {
-                var connection = builder.Configuration.GetConnectionString("AppDataContext")?? null;
+                var connection = builder.Configuration.GetConnectionString("AppDataContext") ?? null;
 
-                if (connection == null) 
+                if (connection == null)
                 {
                     throw new Exception("Could not configure database context!");
                 }
@@ -27,7 +28,9 @@ namespace Web.Core.Api.Bundles
                 opt.UseMySQL(connection);
             });
 
+            builder.Services.AddScoped<IMetricService, MetricService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<IApiPerformanceService, ApiPerformanceService>();
 
             ConfigureJwt(builder);
 
@@ -39,15 +42,13 @@ namespace Web.Core.Api.Bundles
 
         public static void ConfigureApp(WebApplication app)
         {
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
             app.Use(async (context, next) =>
             {
                 Thread.CurrentPrincipal = context.User;

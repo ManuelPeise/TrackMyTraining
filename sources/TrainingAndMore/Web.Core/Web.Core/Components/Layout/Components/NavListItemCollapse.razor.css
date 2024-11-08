@@ -1,0 +1,157 @@
+﻿.nav-list-item {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    border-left: 2px solid transparent;
+}
+
+.nav-collapse-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-list-item i {
+    padding-left: 10px;
+    color: #fff;
+}
+
+.nav-list-item span {
+    display: none;
+    font-size: 1.2rem;
+}
+
+.nav-list-item.expanded span {
+    display: flex;
+    padding: 0 8px;
+    color: #fff;
+}
+
+.nav-list-item.expanded:hover {
+    border-left: 2px solid #0059b3;
+    cursor: pointer;
+}
+
+.sidebar-dropdown {
+    width: 100%;
+}
+
+    .sidebar-dropdown li {
+        padding-left: 2rem;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+..sidebar-dropdown li {
+    border-right: 3px solid transparent;
+}
+
+/*.sidebar-dropdown li:hover {
+    border-right: 2px solid #0080ff;
+}*/
+/*    .nav-list-item.nav-collapse-btn span {
+        display: none;
+    }*/
+/*.nav-collapse-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}*/
+/*.nav-list-item i {
+    padding-left: 10px;
+    color: #fff;
+}*/
+/*
+.nav-list-item span {
+    display: none;
+}
+
+
+.nav-list-item.expanded span {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+}
+
+.nav-list-item.expanded span {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+}
+
+.nav-list-item.expanded:hover {
+    border-left: 2px solid #0059b3;
+    cursor: pointer;
+}*/
+/*.nav-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 0;
+}
+
+    .nav-list-item i {
+        padding-left: 10px;
+        color: #fff;
+    }
+
+    .nav-list-item.list-item-collapse-button span {
+        display: none;
+    }
+
+    .nav-list-item.expanded.list-item-collapse-button {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+        border-left: 2px solid transparent;
+    }
+
+        .nav-list-item.expanded .list-item-collapse-button {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            text-decoration: none;
+        }
+
+            .nav-list-item.expanded .list-item-collapse-button span {
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: #fff;
+                padding: 0 8px;
+                font-weight: 400;
+            }
+
+.sidebar-dropdown {
+    list-style: none;
+    width: 100%;
+}
+
+    .sidebar-dropdown .sidebar-item {
+        width: 100%;
+        padding: 4px 0;
+        padding-left: 3.5rem;
+    }
+
+.nav-list-item.expanded:hover {
+    border-left: 2px solid #0059b3;
+    
+}*/
+/*.nav-list-item.expanded span:hover {
+    color: #0059b3;
+}*/
+.sidebar-dropdown .sidebar-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+    .sidebar-dropdown .sidebar-item a:hover {
+        cursor: pointer;
+        color: #0059b3;
+    }
+
+i {
+    font-size: 1.5rem;
+}

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
@@ -37,6 +38,47 @@ namespace Data.Context.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "LogMessages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Message = table.Column<string>(type: "longtext", nullable: false),
+                    ExceptionMessage = table.Column<string>(type: "longtext", nullable: true),
+                    MessageType = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "longtext", nullable: false),
+                    TimeStamp = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CreatedBy = table.Column<string>(type: "longtext", nullable: true),
+                    CreatedAt = table.Column<string>(type: "longtext", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "longtext", nullable: true),
+                    UpdatedAt = table.Column<string>(type: "longtext", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LogMessages", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Metrics",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Type = table.Column<int>(type: "int", nullable: false),
+                    Json = table.Column<string>(type: "longtext", nullable: true),
+                    CreatedBy = table.Column<string>(type: "longtext", nullable: true),
+                    CreatedAt = table.Column<string>(type: "longtext", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "longtext", nullable: true),
+                    UpdatedAt = table.Column<string>(type: "longtext", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Metrics", x => x.Id);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "AppUser",
                 columns: table => new
                 {
@@ -47,6 +89,7 @@ namespace Data.Context.Migrations
                     Email = table.Column<string>(type: "longtext", nullable: false),
                     DateOfBirth = table.Column<string>(type: "longtext", nullable: false),
                     UserRole = table.Column<int>(type: "int", nullable: false),
+                    IsLoggedIn = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     IsActive = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CredentialsId = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "longtext", nullable: true),
@@ -69,12 +112,12 @@ namespace Data.Context.Migrations
             migrationBuilder.InsertData(
                 table: "Credentials",
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "ExpiresAt", "FailedLogins", "Password", "RefreshToken", "Salt", "UpdatedAt", "UpdatedBy" },
-                values: new object[] { 1, "2024-10-31", "System", "", 0, "U3VwZXJTZWNyZXQ2MjhhYzEwYi05NGZlLTQ4MDUtYjE2MS04NTYxOGMzZjVkODc=", "", "628ac10b-94fe-4805-b161-85618c3f5d87", "2024-10-31", "System" });
+                values: new object[] { 1, "2024-11-07", "System", "", 0, "U3VwZXJTZWNyZXQzNmU4OTEzMy1jYWZlLTRjZDUtODRhZi01NGM4YTRmNWJmZDk=", "", "36e89133-cafe-4cd5-84af-54c8a4f5bfd9", null, null });
 
             migrationBuilder.InsertData(
                 table: "AppUser",
-                columns: new[] { "Id", "CreatedAt", "CreatedBy", "CredentialsId", "DateOfBirth", "Email", "FirstName", "IsActive", "Name", "UpdatedAt", "UpdatedBy", "UserRole" },
-                values: new object[] { 1, "2024-10-31", "System", 1, "01.01.2010", "test@app.com", "", true, "", null, null, 1 });
+                columns: new[] { "Id", "CreatedAt", "CreatedBy", "CredentialsId", "DateOfBirth", "Email", "FirstName", "IsActive", "IsLoggedIn", "Name", "UpdatedAt", "UpdatedBy", "UserRole" },
+                values: new object[] { 1, "2024-11-07", "System", 1, "01.01.2010", "test@app.com", "", true, false, "", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AppUser_CredentialsId",
@@ -87,6 +130,12 @@ namespace Data.Context.Migrations
         {
             migrationBuilder.DropTable(
                 name: "AppUser");
+
+            migrationBuilder.DropTable(
+                name: "LogMessages");
+
+            migrationBuilder.DropTable(
+                name: "Metrics");
 
             migrationBuilder.DropTable(
                 name: "Credentials");

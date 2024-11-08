@@ -57,6 +57,7 @@ namespace BusinessLogic.Shared.Services
 
                         var (jwt, refreshToken) = tokenGenerator.GenerateToken(_config, LoadUserClaims(selectedUser), 1);
 
+                        selectedUser.IsLoggedIn = true;
                         selectedUser.Credentials.RefreshToken = refreshToken;
 
                         await _userRepository.AddOrUpdateAsync(selectedUser, user => user.Email == loginRequest.Email);
@@ -103,6 +104,7 @@ namespace BusinessLogic.Shared.Services
 
                 if (user.Credentials != null)
                 {
+                    user.IsLoggedIn = false;
                     user.Credentials.RefreshToken = string.Empty;
 
                     await _userRepository.AddOrUpdateAsync(user, usr => usr.Email == user.Email);

@@ -10,7 +10,7 @@ namespace Web.Core.Components.Pages.Auth
         public string Parameter { get; set; }
         private RegistrationResponse RegistrationResponse { get; set; }
 
-        public bool IsLoading { get; set; } = true;
+        public bool IsLoading { get; set; } = false;
 
         private void SetIsLoading(bool isLoading)
         {

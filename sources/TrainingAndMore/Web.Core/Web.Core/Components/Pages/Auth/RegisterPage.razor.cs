@@ -2,7 +2,7 @@
 {
     public partial class RegisterPage
     {
-        public bool IsLoading { get; set; } = true;
+        public bool IsLoading { get; set; } = false;
 
         private void SetIsLoading(bool isLoading)
         {

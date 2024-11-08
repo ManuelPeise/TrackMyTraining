@@ -3,35 +3,17 @@ using BusinessLogic.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Web.Core.Components;
 using Web.Core.Shared.Providers;
-using Web.Core.Shared.Services;
 using Web.Core.Shared.Services.Interfaces;
+using Web.Core.Shared.Services;
+using Web.Core.Shared.ViewModels.Interfaces;
+using Web.Core.Shared.ViewModels;
+using Web.Core.Bundles;
 
-string[] supportedCultures = new string[] { "en-En","de-De" };
-// D:\Development\WorkFolder\TrainingTracker\TrackMyTraining\sources\TrainingAndMore\Web.Core.Shared\Resources\Common.resx
+string[] supportedCultures = new string[] { "en-En", "de-De" };
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddLocalization();
-
-builder.Services.Configure<RequestLocalizationOptions>(opt =>
-{
-    opt.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-En");
-    opt.SupportedCultures = supportedCultures.Select(x => new System.Globalization.CultureInfo(x)).ToList();
-});
-
-builder.Services.AddControllers();
-
-builder.Services.AddScoped<IHttpService, HttpService>();
-builder.Services.AddScoped(typeof(IResourceService<>), typeof(ResourceService<>));
-
-builder.Services.AddAuthenticationCore();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
-builder.Services.AddCascadingAuthenticationState();
-
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents();
-
+ServiceLocator.RegisterServices(builder.Services, supportedCultures);
 
 
 var app = builder.Build();

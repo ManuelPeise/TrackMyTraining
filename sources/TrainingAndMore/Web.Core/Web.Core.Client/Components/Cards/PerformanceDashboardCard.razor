@@ -1,0 +1,15 @@
+﻿<div class="outer @OuterStyle">
+    <div class="inner d-flex justify-content-center align-items-center @InnerStyle">
+        <div class="@LabelStyle">@Label</div>
+    </div>
+</div>
+
+
+
+@code {
+
+    [Parameter] public string? OuterStyle { get; set; }
+    [Parameter] public string? InnerStyle { get; set; }
+    [Parameter] public string? LabelStyle { get; set; }
+    [Parameter] public string? Label { get; set; }
+}

@@ -1,4 +1,5 @@
 ﻿using Data.Entities;
+using Shared.Models.Administration;
 using Shared.Models.Auth;
 
 namespace BusinessLogic.Shared.Extensions
@@ -20,6 +21,17 @@ namespace BusinessLogic.Shared.Extensions
             };
         }
 
-
+        public static UserAdminPageUserModel ToUserAdminPageUserModel(this AppUserEntity entity) 
+        {
+            return new UserAdminPageUserModel
+            {
+                Id = entity.Id,
+                FirstName = entity.FirstName,
+                LastName = entity.Name,
+                Email = entity.Email,
+                IsActive = entity.IsActive,
+                Role = Helpers.GetUserRoleName(entity.UserRole),
+            };
+        }
     }
 }

@@ -72,6 +72,24 @@ namespace Web.Core.Shared.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
         /// </summary>
+        public static string LabelApiDashboard {
+            get {
+                return ResourceManager.GetString("LabelApiDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        public static string LabelApiPerformanceDashboard {
+            get {
+                return ResourceManager.GetString("LabelApiPerformanceDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
         public static string LabelUserAdministration {
             get {
                 return ResourceManager.GetString("LabelUserAdministration", resourceCulture);

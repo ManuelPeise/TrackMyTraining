@@ -123,4 +123,10 @@
   <data name="LabelUserAdministration" xml:space="preserve">
     <value />
   </data>
+  <data name="LabelApiPerformanceDashboard" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelApiDashboard" xml:space="preserve">
+    <value />
+  </data>
 </root>

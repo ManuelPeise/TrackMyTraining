@@ -5,19 +5,22 @@ using Shared.Models.Auth;
 
 namespace Service.Api.Auth
 {
-    public class AuthenticationController : ApiControllerBase
+    public class AuthenticationController : MeasuredApiControllerBase
     {
         private IAuthenticationService _authenticationService;
-
-        public AuthenticationController(IAuthenticationService authenticationService)
+        private IMetricService _metricService;
+        public AuthenticationController(IAuthenticationService authenticationService, IMetricService metricService) : base(metricService)
         {
             _authenticationService = authenticationService;
+            _metricService = metricService;
         }
 
-        [HttpPost(Name = "UserLogin")]
+        [HttpPost(Name = "Authentication")]
         public async Task<ApiResponse<string>> UserLogin([FromBody] LoginRequest request)
         {
             var result = await _authenticationService.TryLogIn(request);
+
+            await MonitorEndpointPerformance("Authentication", "Authentication", result);
 
             return new ApiResponse<string>
             {
@@ -31,6 +34,8 @@ namespace Service.Api.Auth
         {
             var result = await _authenticationService.TryRegisterUser(request);
 
+            await MonitorEndpointPerformance("Authentication", "UserRegistration", result);
+
             return new ApiResponse<RegistrationResponse>
             {
                 Success = result?.Success ?? false,
@@ -43,6 +48,8 @@ namespace Service.Api.Auth
         {
             var result = await _authenticationService.TryActivateAccount(request);
 
+            await MonitorEndpointPerformance("Authentication", "ConfirmEmail", result);
+
             return new ApiResponse<UserAccountActivationResponse>
             {
                 Success = result != null,
@@ -54,6 +61,8 @@ namespace Service.Api.Auth
         public async Task<ApiResponse<string>> UserLogout(int userId)
         {
             var result = await _authenticationService.TryLogOut(userId);
+
+            await MonitorEndpointPerformance("Authentication", "UserLogout", result);
 
             return new ApiResponse<string>
             {

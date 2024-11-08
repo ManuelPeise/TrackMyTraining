@@ -12,6 +12,7 @@ namespace Data.Entities
         public string UserName => Email;
         public string DateOfBirth { get; set; } = string.Empty;
         public UserRoleEnum UserRole { get; set; }
+        public bool IsLoggedIn { get; set; }
         public bool IsActive { get; set; }
         public int CredentialsId { get; set; }
 

@@ -1,0 +1,25 @@
+﻿<div class="select-container">
+    <select id="@Id" class="form-select @ButtonCss" data-bind="@SelectedItem" @onchange="OnChange">
+        @if (Options.Any())
+        {
+            foreach (var item in Options)
+            {
+                <option disabled="@item.Selected" value="@item.Value" class="dropdown-item">@item.Value</option>
+            }
+        }
+    </select>
+</div>
+
+@code {
+    [Parameter] public string? Id { get; set; }
+    [Parameter] public string? ButtonCss { get; set; }
+    [Parameter] public int SelectedItem { get; set; }
+    [Parameter] public List<SelectItem> Options { get; set; } = new List<SelectItem>();
+    [Parameter] public EventCallback<ChangeEventArgs> OnChangeValue { get; set; }
+
+    private async Task OnChange(ChangeEventArgs e)
+    {
+        await OnChangeValue.InvokeAsync(e);
+    }
+
+}

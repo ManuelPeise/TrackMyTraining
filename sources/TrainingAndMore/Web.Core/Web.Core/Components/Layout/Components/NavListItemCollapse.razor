@@ -1,0 +1,26 @@
+﻿@using Web.Core.Shared.Models.Navigation
+<li class="@Css" data-bs-toggle="collapse" data-bs-target="#@Id" role="button" aria-expanded="false" aria-controls="@Id">
+    <div class="nav-collapse-btn">
+        <i class="@Icon"></i>
+        <span>@Label</span>
+    </div>
+    <div>
+        <ul id="@Id" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#@ParentId">
+            @foreach (var item in Items)
+            {
+                <li id="@item.Id" class="sidebar-item">
+                    <a href="@item.To" class="sidebar-link"><span>@item.Label</span></a>
+                </li>
+            }
+        </ul>
+    </div>
+</li>
+
+@code {
+    [Parameter] public string? Css { get; set; }
+    [Parameter] public string? Id { get; set; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public string? Label { get; set; }
+    [Parameter] public string? ParentId { get; set; }
+    [Parameter] public List<NavListItemModel> Items { get; set; } = new List<NavListItemModel>();
+}

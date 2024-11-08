@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic.Administration\BusinessLogic.Administration.csproj" />
     <ProjectReference Include="..\BusinessLogic.Shared\BusinessLogic.Shared.csproj" />
     <ProjectReference Include="..\Data.Context\Data.Context.csproj" />
     <ProjectReference Include="..\Service.Api\Service.Api.csproj" />
