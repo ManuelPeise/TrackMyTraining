@@ -1,0 +1,16 @@
+{
+  "labelLogin": "Login",
+  "labelEmail": "Email",
+  "labelPassword": "Password",
+  "labelPasswordReplication": "Password replication",
+  "labelRemember": "Remember login data",
+  "labelIntoAccount": "Into your account",
+  "labelRegister": "Register",
+  "labelCreateAccount": "Create your account.",
+  "labelName": "Name",
+  "labelFirstName": "First name",
+  "labelDateOfBirth": "Date of birth (dd.MM.yyyy)",
+  "captionAccountActivation": "Account activation",
+  "labelConfirmEmail": "{UserName} confirm your email address to activate your account.",
+  "labelConfirm": "Confirm"
+}

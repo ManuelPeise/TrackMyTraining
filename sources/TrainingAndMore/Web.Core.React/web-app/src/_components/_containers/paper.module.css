@@ -1,0 +1,17 @@
+.paper {
+  width: 90vw;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .paper {
+    width: 30vw;
+  }
+}
