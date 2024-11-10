@@ -212,8 +212,14 @@ namespace BusinessLogic.Shared.Services
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.UserIdClaim, user.Id.ToString()),
+                new Claim(ClaimTypes.NameClaim, user.Name),
+                new Claim(ClaimTypes.FirstNameClaim, user.FirstName),
+                new Claim(ClaimTypes.UserNameClaim, user.UserName),
                 new Claim(ClaimTypes.EmailClaim, user.Email),
-                new Claim(ClaimTypes.UserDataClaim, JsonConvert.SerializeObject(user.ToExportModel())),
+                new Claim(ClaimTypes.DateOfBirthClaim, user.DateOfBirth),
+                new Claim(ClaimTypes.RoleClaim, Enum.GetName(user.UserRole).ToLower()),
+                new Claim(ClaimTypes.IsActiveClaim, user.IsActive.ToString()),
+                new Claim(ClaimTypes.UserDataClaim, JsonConvert.SerializeObject(user))
             };
 
             return claims;

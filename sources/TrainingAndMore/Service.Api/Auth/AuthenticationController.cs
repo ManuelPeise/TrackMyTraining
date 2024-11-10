@@ -15,7 +15,7 @@ namespace Service.Api.Auth
             _metricService = metricService;
         }
 
-        [HttpPost(Name = "Authentication")]
+        [HttpPost(Name = "UserLogin")]
         public async Task<ApiResponse<string>> UserLogin([FromBody] LoginRequest request)
         {
             var result = await _authenticationService.TryLogIn(request);

@@ -1,0 +1,16 @@
+.linkContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+}
+
+.link:hover {
+  cursor: pointer;
+}

@@ -28,11 +28,23 @@ namespace Web.Core.Api.Bundles
                 opt.UseMySQL(connection);
             });
 
+            
+
             builder.Services.AddScoped<IMetricService, MetricService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<IApiPerformanceService, ApiPerformanceService>();
 
             ConfigureJwt(builder);
+
+            builder.Services.AddCors((opt) =>
+            {
+                opt.AddPolicy(CorsPolicy, (opt) =>
+                {
+                    opt.AllowAnyHeader();
+                    opt.AllowAnyMethod();
+                    opt.AllowAnyOrigin();
+                });
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -46,6 +58,8 @@ namespace Web.Core.Api.Bundles
             app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
+
+            app.UseCors(CorsPolicy);
 
             app.UseAuthorization();
 

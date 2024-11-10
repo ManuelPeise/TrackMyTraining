@@ -1,0 +1,90 @@
+.navbar {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: #00264d !important;
+  height: 8vh;
+}
+
+.navbarTogglerContainer {
+  padding: 0 0 0 0.199rem;
+  margin: 0;
+}
+
+.toggleButton {
+  color: #fff;
+  padding-left: 0rem;
+  font-size: 2rem;
+}
+
+.toggleButton:hover {
+  cursor: pointer;
+  color: #e6e6e6;
+}
+
+.navNavigation {
+  display: none;
+}
+
+.navBarToggler {
+  display: none;
+}
+
+.branding {
+  text-decoration: none;
+  color: #fff;
+}
+
+.brandContainer {
+  padding: 0.4rem 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.brandContainer .branding {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.branding:hover {
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    height: auto;
+    padding: 0.7rem 0 1rem 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbarTogglerContainer {
+    display: flex;
+    width: 100%;
+    padding: 0 0.2rem;
+    justify-content: space-between;
+  }
+
+  .navNavigation {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+
+  .brandContainer .branding {
+    margin-left: 0.3rem;
+  }
+
+  .navBarToggler {
+    display: block;
+    background-color: #00264d;
+    border: none;
+    padding: 0.2rem;
+  }
+
+  .toggleButton {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.authPageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../_lib/img/running.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #0059b3;
+}
+
+.appPageContainer {
+  width: 100vw !important;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+}
+
+.navContainer {
+  width: 100%;
+  padding: 0 !important;
+}
+
+.contentContainer {
+  /* width: 100%;
+  height: 100%; */
+  display: flex;
+  flex-direction: row;
+  background-color: #e6e6e6;
+}
+
+@media (max-width: 991px) {
+  .contentContainer {
+    display: block;
+    height: max-content;
+    min-height: max-content;
+    max-height: max-content;
+  }
+}
