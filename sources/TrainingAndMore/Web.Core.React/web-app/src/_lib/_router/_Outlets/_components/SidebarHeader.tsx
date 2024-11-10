@@ -10,8 +10,6 @@ interface IProps {
 const SidebarHeader: React.FC<IProps> = (props) => {
   const { token, isExpanded } = props;
 
-  console.log(token);
-
   return (
     <div className={isExpanded ? css.containerExpanded : css.container}>
       <div className={isExpanded ? css.innerExpanded : css.inner}>
@@ -25,7 +23,7 @@ const SidebarHeader: React.FC<IProps> = (props) => {
             isExpanded ? css.labelContainerExpanded : css.labelContainer
           }
         >
-          <label>{token.userName}</label>
+          <label>{token?.userName}</label>
           <hr />
         </div>
       </div>

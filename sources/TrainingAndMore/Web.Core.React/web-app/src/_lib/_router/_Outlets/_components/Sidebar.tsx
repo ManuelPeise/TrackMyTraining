@@ -12,7 +12,6 @@ interface IProps {
 const Sidebar: React.FC<IProps> = (props) => {
   const { isExpanded, token } = props;
 
-  console.log(token);
   return (
     <div className={`${isExpanded ? css.sidebarExpanded : css.sidebar}`}>
       <SidebarHeader token={token} isExpanded={isExpanded} />
